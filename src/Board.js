@@ -90,6 +90,13 @@ class Board extends Component {
     this.setState({board, hasWon});
   }
 
+  reset = () => {
+    this.setState({
+      hasWon: false,
+      board: this.createBoard()
+    })
+  }
+
 
   /** Render game board or winning message. */
 
@@ -128,6 +135,7 @@ class Board extends Component {
           {tblBoard}
         </tbody>
       </table>
+      <button className="neon-blue" style= {{ marginTop: "60px" }} onClick={this.reset}> Restart </button>
       </div>
     )
   }
